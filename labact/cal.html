@@ -1,0 +1,91 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Calcu</title>
+	<style>
+		table {
+			border-collapse: collapse;}
+		
+		td {
+			padding:5px 10px;
+			text-align: center;}
+		input{
+			text-align: right;
+			border: none;}
+		input:focus {
+			outline:none;
+		}
+		
+
+		
+	</style>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td colspan="4">
+				<input type="text" id="display">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<input type="text" id="result">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" onclick="reset()"><button>AC</button></td>
+			<td onclick="add('/')"><button>/</button></td>
+		</tr>
+		<tr>
+			<td onclick= "add(7)"><button>7</button></td>
+			<td onclick= "add(8)"><button>8</button></td>
+			<td onclick= "add(9)"><button>9</button></td>
+			<td onclick= "add('*')"><button>*</button></td>
+		</tr>
+		<tr>
+			<td onclick= "add(4)"><button>4</button></td>
+			<td onclick= "add(5)"><button>5</button></td>
+			<td onclick= "add(6)"><button>6</button></td>
+			<td onclick= "add('-')"><button>-</button></td>
+		</tr>
+		<tr>
+			<td onclick= "add(1)"><button>1</button></td>
+			<td onclick= "add(2)"><button>2</button></td>
+			<td onclick= "add(3)"><button>3</button></td>
+			<td onclick= "add('+')"><button>+</button></td>
+		</tr>
+		<tr>
+			<td colspan="2" onclick="add(0)"><button>0</button></td>
+			<td onclick="add('.')"><button>.</button></td>
+			<td onclick="calculate()"><button>=</button></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function add(char) {
+			var display = document.getElementById('display');
+			display.value = display.value +char
+		}
+		function sub(char) {
+			var display = document.getElementById('display');
+			display.value = display.value -char
+		function mul(char) {
+			var display = document.getElementById('display');
+			display.value = display.value *char
+		}
+		function div(char) {
+			var display = document.getElementById('display');
+			display.value = display.value /char
+		}
+		}
+		function calculate() {
+			var display = document.getElementById('display');
+			var result = eval(display.value);
+			document.getElementById('result').value = result;
+		}
+		function reset() {
+			document.getElementById('display').value ="";
+			document.getElementById('result').value ="";
+		}
+	</script>
+</body>
+</html>
